@@ -64,3 +64,8 @@ def vectorize(w2i, d, a, e):
 #         x_v = torch.stack(x_v, 0)
         ret_data.append((x_v, to_var([a[i]], LT), to_var([e[i]], FT)))
     return ret_data
+
+
+def save_checkpoint(state, filename='./checkpoints/checkpoint.pth.tar'):
+    print('save model!', filename)
+    torch.save(state, filename)
